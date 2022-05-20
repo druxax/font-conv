@@ -69,7 +69,7 @@ async function prepareResDir(resPath){
     try{
         const stats = await fsPromises.stat(resPath);
         if(stats.isDirectory()){
-            await fsPromises.rmdir(resPath, { recursive: true });
+            await fsPromises.rm(resPath, { recursive: true });
             await fsPromises.mkdir(resPath);
         }
         else {
